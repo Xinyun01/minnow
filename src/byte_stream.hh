@@ -23,7 +23,13 @@ public:
 
 protected:
   // Please add any additional state to the ByteStream here, and not to the Writer and Reader interfaces.
-  uint64_t capacity_;
+
+  uint64_t capacity_;//容量
+  uint64_t Byte_pushed; //推送的字节数
+  uint64_t Byte_poped; //弹出的字节数
+  std::string buffer_{};//栈中的数据
+  bool Closed_flag;     //是否关闭
+
   bool error_ {};
 };
 
